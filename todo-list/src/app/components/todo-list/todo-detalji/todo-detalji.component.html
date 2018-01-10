@@ -1,0 +1,11 @@
+<h2>Detalji zadatka:<br>{{ todo.ime }}</h2>
+<br>
+<form [formGroup]="form" novalidate>
+  <textarea name="detalji" class="form-control" formControlName="detalji"></textarea>
+</form>
+<br>
+<div>
+  <button class="btn" type="button" (click)="goBack()">Nazad</button>
+  <button class="btn btn-danger" type="button" (click)="deleteTodo()">Obriši</button>
+  <button [disabled]="!form.valid" class="btn btn-success" type="button" (click)="editTodo()">Spremi</button>
+</div>

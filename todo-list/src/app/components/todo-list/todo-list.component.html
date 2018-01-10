@@ -1,0 +1,25 @@
+<div>
+  <app-todo-form></app-todo-form>
+</div>
+
+<hr>
+
+<h4>Zadaci ({{ todos.length }})</h4>
+
+<div *ngIf="todos.length !== 0; else prazno">
+  <ul class="col-6 list-group">
+    <li class="list-group-item" *ngFor="let todo of todos" (click)="toggleSelect(todo.id)" [ngClass]="{ 'selekt': selectedTodos.includes(todo.id) }">
+      <a [routerLink]="['/detalji', todo.id]">{{ todo.ime }}</a>
+      <p *ngIf="todo.detalji">{{ todo.detalji }}</p>
+    </li>
+  </ul>
+  <br>
+  <div *ngIf="selectedTodos.length !== 0">
+    <button class="btn btn-danger" (click)="deleteSelectedTodos()" [disabled]="selectedTodos.length === 0">Obriši označene zadatke</button>
+  </div>
+</div>
+<ng-template #prazno>
+  <div class="col col-6">
+    Nema zadataka
+  </div>
+</ng-template>
