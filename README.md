@@ -10,4 +10,3 @@ TODO List aplikacija
         Prikazuje se ime zadatka s početne stranice i textarea input za detalje zadatka
         Textarea je moguće editirati
         Back button koji vraća na početnu stranicu
-    Kod aplikacije uploadati na github (ili slično) i poslati link.
